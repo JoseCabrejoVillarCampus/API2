@@ -1,0 +1,39 @@
+#contenidoA{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+#contenidoA{
+    box-shadow: 0 0 20px rgb(83, 197, 217);
+}
+
+#card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#img{
+    width: 60%;
+    height: 60%;
+}
+
+body{
+    background-color: black;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px rgb(217, 62, 5);
+}
+
+#formulario{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    margin-bottom: 8%;
+}
+
+#but1, #but{
+    height: min-content;
+    margin-top: 10%;
+}
