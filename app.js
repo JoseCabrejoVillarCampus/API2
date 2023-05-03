@@ -9,7 +9,6 @@ function showGame() {
 }
 
 showGame()//llamamos la funcion
-
 /* ;
 
  */

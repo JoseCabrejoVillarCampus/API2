@@ -5,18 +5,21 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    
 }
-#contenidoA{
+#carta{
     box-shadow: 0 0 20px rgb(83, 197, 217);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    margin-bottom: 5px;
+    padding-bottom: 2%;
 }
-
+#imas{
+    width: 90%;
+    height: 60%;
+}
 #card{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 }
 #img{
     width: 60%;

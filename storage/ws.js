@@ -1,7 +1,7 @@
-let offset = 0;
+
 let ws = {
     async consult() {
-        const url = `https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc&offset=${offset}`;
+        const url = `https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d`;
         const options = {
             method: 'GET',
             headers: {
@@ -19,8 +19,8 @@ let ws = {
         }
     },
     render_templates(arr_data) {
-        let div;
-        arr_data.slice(0, 1).forEach(game => {
+        let div = '';
+        arr_data.forEach(game => {
             const {
                 developer,
                 freetogame_profile_url,
@@ -29,36 +29,37 @@ let ws = {
                 platform,
                 publisher,
                 release_date,
-                short_description,
                 thumbnail,
                 title
             } = game;
-            div = `
-            <div>${title}</div>
-            <div><img src="${thumbnail}"></div>
-            <div>${short_description}</div>
-            <div>${publisher}</div>
-            <div>${release_date}</div>
-            <div>${platform}</div>
-            <div>${genre}</div>
+            div += `<div id="carta">
+            <h1>${title}</h1>
+            <a><img id="imas" src="${thumbnail}"></a>
+            <p>${publisher}</p>
+            <h4>${release_date}</h4>
+            <h3>${platform}</h3>
+            <h2>${genre}</h2>
             <div>${id}</div>
             <div>${developer}</div>
-            <div><a href="${freetogame_profile_url}">LINK AL JUEGO</a></div><br>`;
+            <a href="${freetogame_profile_url}">LINK AL JUEGO</a></div><br>
+            </div>
+            `;
         });
         return div
     },
-    butons() {
-        let anterior = document.getElementById('but1');
+    /* async butons() {
+        const anterior = document.getElementById('but1');
         anterior.addEventListener('click', async () => {
+            console.log("faaaa");
             offset -= 1; // Actualizar el offset
             await ws.consult(); 
         })
-        let siguiente = document.getElementById('but');
+        const siguiente = document.getElementById('but');
         siguiente.addEventListener('click', async () => {
             offset += 1; // Actualizar el offset
             await ws.consult();
         });
-    }
+    } */
 }
 
 
